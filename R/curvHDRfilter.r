@@ -4,7 +4,7 @@
 # multivariate continuous data. The current version
 # supports univaraite, bivariate and trivariate data.
 
-# Last changed: 16 NOV 2010
+# Last changed: 19 DEC 2011
 
 curvHDRfilter <- function(x,HDRlevel=0.1,growthFac=NULL,signifLevel=0.05,bwFac=1,
                           gridsize=NULL,removeDebri=TRUE,minSampSize=NULL,
@@ -90,7 +90,8 @@ curvHDRfilter <- function(x,HDRlevel=0.1,growthFac=NULL,signifLevel=0.05,bwFac=1
       if (dmn==3)
       {
            library(rgl)
-           xSub <- x[sample(1:nrow(x),2000),]
+           if (nrow(x)<=2000) xSub <- x
+           if (nrow(x)> 2000) xSub <- x[sample(1:nrow(x),2000),]
            rgl.clear() ; rgl.bg(col="white")
            rgl.spheres(xSub[,1],xSub[,2],xSub[,3],col="orange",alpha=0.2,radius=0.025)
       }

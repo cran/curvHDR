@@ -50,11 +50,13 @@ plot(gate2)
 
 # Trivariate curvHDR example:
 
+\dontrun{
 xTriv <- cbind(c(rnorm(1000,-2),rnorm(1000,2)),
                c(rnorm(1000,-2),rnorm(1000,2)),
                c(rnorm(1000,-2),rnorm(1000,2)))
 gate3 <- curvHDRfilter(xTriv)
 plot(gate3)
+}
 
 }
 \keyword{flow cytomery}

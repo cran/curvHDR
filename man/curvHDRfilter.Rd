@@ -8,12 +8,13 @@ endeavour to mimic human-perceived gates.
 }
 \usage{
 curvHDRfilter(x, HDRlevel, growthFac = NULL, signifLevel = 0.05,
-              bwFac =1, gridsize = NULL, removeDebri = TRUE,
+              bwFac = 1, gridsize = NULL, removeDebri = TRUE,
               minSampSize = NULL, HpiGridSize = NULL, quiet = TRUE,
               graphChk = FALSE)
 }
 \arguments{
-  \item{x}{array containing the input data, typically corresponding to flow cytometric
+  \item{x}{array containing the input data, typically corresponding
+           to flow cytometric
            measurements. \code{x} should either be a numerical vector
 	   (univariate input data) or a matrix or data frame
 	   having 1-3 columns.}
@@ -27,8 +28,8 @@ curvHDRfilter(x, HDRlevel, growthFac = NULL, signifLevel = 0.05,
   \item{signifLevel}{number between 0 and 1 corresponding to the
     significance level for curve region determination. The default value
     of \code{signifLevel} is 0.05.}
-  \item{bwFac}{bandwidth factor. The default bandwidth
-		    is multiplied by \code{bwFac}. The default value }
+  \item{bwFac}{bandwidth factor. The default bandwidth is multiplied
+               by \code{bwFac}. The default value of \code{bwFac} is 1.}
   \item{gridsize}{vector of number of grid points in each direction}
   \item{removeDebri}{Boolean flag for removal of `debri' points in the
                      input data. The default value of \code{removeDebri}
@@ -45,11 +46,17 @@ curvHDRfilter(x, HDRlevel, growthFac = NULL, signifLevel = 0.05,
                         running. If \code{quiet} is FALSE then
                         progress reports on during filter
                         determination are given. The default value
-			of \code{quiet} is FALSE}
+			of \code{quiet} is TRUE}
  \item{graphChk}{Boolean flag for graphical checking. If \code{graphChk}
-   is true then graphical displays for each stage of the
-   curvHDRfilter() are sent to the screen. The default value of
-   \code{graphChk} is FALSE}
+   is TRUE then graphical displays for each stage of the
+   curvHDRfilter() are sent to the screen. At the first stage,
+   the input data are plotted. Then the high negative curvature
+   regions are shown in purple. This is followed by a display, in
+   green, of the \code{growthFac}-magnifications of the
+   convexified high negative curvature regions. The final gates,
+   corresponding to highest density regions for each green
+   region, are shown in blue. The default value of \code{graphChk}
+   is FALSE}
 }
 \value{
   \item{data}{the input data (for use in plotting).}
@@ -77,14 +84,18 @@ library(curvHDR)
 xUniv <- c(rnorm(1000,-2),rnorm(1000,2))
 
 gate1a <- curvHDRfilter(xUniv)
-print(gate1a$poly)
-print(gate1a$insideFilter)
 plot(gate1a)
+print(gate1a$poly) # List of intervals that define gate1a.
+\dontrun{print(gate1a$insideFilter)  # Indicators of inclusion of
+                                     # xUniv inside gate1a.
+}
 
 gate1b <- curvHDRfilter(xUniv,HDRlevel=0.5)
-print(gate1b$poly)
-print(gate1b$insideFilter)
 plot(gate1b)
+print(gate1b$poly) # List of intervals that define gate1b. 
+\dontrun{print(gate1b$insideFilter) # Indicators of inclusion of
+                                     # xUniv inside gate1b.
+}
 
 # Bivariate curvHDR examples:
 
@@ -92,30 +103,42 @@ xBiva <- cbind(c(rnorm(1000,-2),rnorm(1000,2)),
                c(rnorm(1000,-2),rnorm(1000,2)))
 
 gate2a <- curvHDRfilter(xBiva)
-print(gate2a$poly)
-print(gate2a$insideFilter)
 plot(gate2a)
+\dontrun{
+print(gate2a$poly) # List of polygon vertices that define gate2a.
+print(gate2a$insideFilter) # Indicators of inclusion of
+                             # xBiva inside gate2a.
+}
 
 gate2b <- curvHDRfilter(xBiva,HDRlevel=0.5)
-print(gate2b$poly)
-print(gate2b$insideFilter)
 plot(gate2b)
+\dontrun{
+print(gate2b$poly)           # List of polygon vertices that define gate2b.
+print(gate2b$insideFilter)   # Indicators of inclusion of
+                             # xBiva inside gate2b.
+}
 
 # Trivariate curvHDR examples:
 
+\dontrun{
 xTriv <- cbind(c(rnorm(1000,-2),rnorm(1000,2)),
                c(rnorm(1000,-2),rnorm(1000,2)),
                c(rnorm(1000,-2),rnorm(1000,2)))
 
 gate3a <- curvHDRfilter(xTriv)
-print(gate3a$poly)
-print(gate3a$insideFilter)
 plot(gate3a)
+print(gate3a$poly)         # List of polyhedron elements that define gate3a.
+print(gate3a$insideFilter) # Indicators of inclusion of
+                           # xTriv inside gate3a.
+}
 
+\dontrun{
 gate3b <- curvHDRfilter(xTriv,HDRlevel=0.5)
-print(gate3b$poly)
-print(gate3b$insideFilter)
 plot(gate3b)
+print(gate3b$poly)          # List of polyhedron elements that define gate3b.
+print(gate3b$insideFilter)  # Indicators of inclusion of
+                            # xTriv inside gate3b.
+}
 }
 \keyword{flow cytomery}
 \keyword{feature significance}
