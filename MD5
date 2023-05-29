@@ -1,4 +1,4 @@
-9b7312c47ba9cf043ee855ac03c80e51 *DESCRIPTION
+65e890a29bd7255102633b4fdf95c04d *DESCRIPTION
 589b14ef007f79ef2a91b81230acffbe *NAMESPACE
 c635dd634b10fe02a9d707aa47b6c7f5 *R/addIntervs.r
 0b01b3766dc0f4756f8a58a45339526e *R/areaPolygon.r
@@ -19,15 +19,14 @@ c090203cb8d16fcd0478b40d76f76519 *R/tranUnitInt.r
 5a68ef6b15fdcd9bbf442335b75d983f *R/triPolyhCentroid.r
 1400f312fd31050b7cd3c3b40de2e8c5 *R/vertexTriangles.r
 4c2335bb848d79c5e76e17b4d97ca639 *R/zzz.r
-a4a6d34390c3780a915e8f43675a2b2b *build/vignette.rds
+b70bd6c4dd1ae1ff474f0b27be202371 *build/vignette.rds
 b04a5b00ccfbfd015117d97d3cde45a6 *inst/doc/manual.Rnw
-14c6ecb54749bfbdb5f5242360dc7245 *inst/doc/manual.pdf
+b12dcf10fc736e97141186cbe87ed092 *inst/doc/manual.pdf
 a01e2a81c11b81502e6ff4944654ffd5 *man/curvHDR-internal.Rd
 5ec09bac4f6d42f8afe46da32efd5618 *man/curvHDRfilter.Rd
-57ce4e5ad4d330816e33f82a12596507 *man/curvHDRvignette.Rd
+169e5312aa3df9fd0268f6dc3ce19db0 *man/curvHDRvignette.Rd
 0a3baefb0e31911372a7de30486c2a7f *man/plot.curvHDRfilter.Rd
 d2753ca9632d5e654ecbe3f5cead812b *src/init.c
 e18e4f67132cb717a3760323b2c41adf *src/inpolygon.c
 c6204a07436d60e9c3b6c734a2171f76 *vignettes/curvHDR.pdf
-d5e3f9b3fc0ad9055233fc6457b55542 *vignettes/glmmEP.pdf
 b04a5b00ccfbfd015117d97d3cde45a6 *vignettes/manual.Rnw

@@ -7,6 +7,8 @@ curvHDRvignette()
 }
 \author{Matt Wand\email{matt.wand@uts.edu.au}, G. Luta\email{gl77@georgetown.edu} and U. Naumann\email{ulrike.naumann1@gmail.com}}
 \examples{
-curvHDRvignette()
+   if(interactive())
+   {
+      curvHDRvignette()
+   }
 }
-

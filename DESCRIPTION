@@ -1,6 +1,6 @@
 Package: curvHDR
-Version: 1.2-1.1
-Date: 2019-01-09
+Version: 1.2-2
+Date: 2023-05-29
 Title: Filtering of Flow Cytometry Samples
 Authors@R: c(person("Matt", "Wand", role = c("aut","cre"), email = "matt.wand@uts.edu.au"),
     person("George", "Luta", role = "aut", email = "gl77@georgetown.edu"),
@@ -16,7 +16,8 @@ Description: Filtering, also known as gating, of flow cytometry samples using
              Wand, M.P. (2010) <DOI:10.1186/1471-2105-11-44>.
 License: GPL (>= 2)
 NeedsCompilation: yes
-Packaged: 2022-11-21 07:54:46 UTC; hornik
+Maintainer: Matt Wand <matt.wand@uts.edu.au>
+Packaged: 2023-05-29 04:35:14 UTC; mwand
 Author: Matt Wand [aut, cre],
   George Luta [aut],
   Ulrike Naumann [aut],
@@ -24,6 +25,5 @@ Author: Matt Wand [aut, cre],
   Dai Feng [ctb],
   Luke Tierney [ctb],
   Florian Hahne [ctb]
-Maintainer: Matt Wand <matt.wand@uts.edu.au>
 Repository: CRAN
-Date/Publication: 2022-11-21 07:57:16 UTC
+Date/Publication: 2023-05-29 15:50:06 UTC
